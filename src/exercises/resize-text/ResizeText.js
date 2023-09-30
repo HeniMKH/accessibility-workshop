@@ -6,7 +6,7 @@ export const ResizeText = () => {
     <main className={'main'}>
       <h1 className={'heading'}>Resizing text</h1>
       <p>This will enable users to use their 'global' font size setting, without having to zoom each page.</p>
-      <p>Go to Chrome settings -> Appearance (chrome://settings/appearance) and change Font size from Medium to Large</p>
+      <p>Go to Chrome settings - Appearance (chrome://settings/appearance) and change Font size from Medium to Large</p>
 
       <div className={'panel-secondary'}>
       <p className={'px'}>This is set in px - it won't resize</p>

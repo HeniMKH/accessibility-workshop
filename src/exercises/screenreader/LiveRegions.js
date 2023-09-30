@@ -1,21 +1,34 @@
-import '../../styles/layout.css';
-import './FocusH1Spas.css';
-import { useState } from 'react';
+import "../../styles/layout.css";
+import "./FocusH1Spas.css";
+import { useState } from "react";
 export const LiveRegions = () => {
-  const [ data, setData ] = useState([]);
+  const [data, setData] = useState([]);
+  const [content, setContent] = useState("");
   const loadData = () => {
     setTimeout(() => {
-      const data = ['one', 'two', 'three']
+      const data = ["one", "two", "three"];
       setData(data);
+      setContent("Load");
     }, 2000);
   };
 
   return (
-    <main className={'main'}>
-      <h1 className={'heading'}>Live regions</h1>
-      <p>Live regions are used to announce changes to the page. They are useful for things like chat messages, notifications, and form validation.</p>
-      <p>Add a div to this page with the attribute 'aria-live="polite"'. When the data is loaded, write a message inside the div.</p>
-      <div><button type={'button'} onClick={loadData}>Load some data</button></div>
+    <main className={"main"}>
+      <div aria-live="polite">{content}</div>
+      <h1 className={"heading"}>Live regions</h1>
+      <p>
+        Live regions are used to announce changes to the page. They are useful
+        for things like chat messages, notifications, and form validation.
+      </p>
+      <p>
+        Add a div to this page with the attribute 'aria-live="polite"'. When the
+        data is loaded, write a message inside the div.
+      </p>
+      <div>
+        <button type={"button"} onClick={loadData}>
+          Load some data
+        </button>
+      </div>
       {data.length > 0 && (
         <ul>
           {data.map((item, index) => (
@@ -24,5 +37,5 @@ export const LiveRegions = () => {
         </ul>
       )}
     </main>
-  )
-}
+  );
+};
